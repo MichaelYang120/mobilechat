@@ -26,7 +26,7 @@ function App(): JSX.Element {
 
   const backgroundStyle = {
     // backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-    backgroundColor: "pink",
+    // backgroundColor: "pink",
     height:"100%",
   };
 
@@ -38,7 +38,7 @@ function App(): JSX.Element {
         <View
           style={{
             // backgroundColor: isDarkMode ? Colors.black : Colors.white,
-            backgroundColor: "red",
+            // backgroundColor: "red",
             height:"100%",
           }}>
           <Login/>
