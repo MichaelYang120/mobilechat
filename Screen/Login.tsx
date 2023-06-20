@@ -1,27 +1,41 @@
 import React, { useState } from 'react'
-import { Text, TextInput, Button, Alert } from 'react-native'
+import { Text, TextInput, Button, Alert, View } from 'react-native'
 
 
 export default function Login () {
-	const [loginState, setLoginState] = useState([]);
-	const [email, setEmail] = useState([]);
-	const [password, setPassword] = useState([]);
+	const [loginState, setLoginState] = useState(Boolean);
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
 
 	const LoginPress = () => {
-		Alert.alert("clicked");
+		console.log("here")
+		console.log(email)
+		console.log(password)
+		
+		// login conditional
+		if(email === "Test" && password ==="Test") {
+			console.warn("logged in successfully")
+			setLoginState(true);
+		}
 	}
 
 	const SignupPress = () => {
-		Alert.alert("pressed")
+		console.warn("clicked")
 	}
+
 
 	return(
 		<>
+		<View>
 			<TextInput
 				placeholder='Email'
+				onChangeText={setEmail}
+				value={email}
 			/>
 			<TextInput
 				placeholder='Password'
+				onChangeText={setPassword}
+				value={password}
 			/>
 			<Button
 				title='Login'
@@ -31,6 +45,8 @@ export default function Login () {
 				title='Sign Up'
 				onPress={SignupPress}
 			/>
+
+		</View>
 		</>
 	)
 }
