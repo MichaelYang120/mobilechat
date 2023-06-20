@@ -1,2 +1,0 @@
-# mobilechat
-mobile chat app
