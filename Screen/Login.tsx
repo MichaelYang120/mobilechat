@@ -16,6 +16,11 @@ export default function Login () {
 		if(email === "Test" && password ==="Test") {
 			console.warn("logged in successfully")
 			setLoginState(true);
+			if(loginState === true) {
+				
+			} else {
+				Alert.alert("Incorrect Email or Password");
+			}
 		}
 	}
 
