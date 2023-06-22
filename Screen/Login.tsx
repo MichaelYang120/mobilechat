@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Text, TextInput, Button, Alert, View } from 'react-native'
 
 
+
 export default function Login () {
 	const [loginState, setLoginState] = useState(Boolean);
 	const [email, setEmail] = useState("");
@@ -31,27 +32,27 @@ export default function Login () {
 
 	return(
 		<>
-		<View>
-			<TextInput
-				placeholder='Email'
-				onChangeText={setEmail}
-				value={email}
-			/>
-			<TextInput
-				placeholder='Password'
-				onChangeText={setPassword}
-				value={password}
-			/>
-			<Button
-				title='Login'
-				onPress={LoginPress}
-			/>
-			<Button 
-				title='Sign Up'
-				onPress={SignupPress}
-			/>
+			<View>
+				<TextInput
+					placeholder='Email'
+					onChangeText={setEmail}
+					value={email}
+				/>
+				<TextInput
+					placeholder='Password'
+					onChangeText={setPassword}
+					value={password}
+				/>
+				<Button
+					title='Login'
+					onPress={LoginPress}
+				/>
+				<Button 
+					title='Sign Up'
+					onPress={SignupPress}
+				/>
 
-		</View>
+			</View>
 		</>
 	)
 }
