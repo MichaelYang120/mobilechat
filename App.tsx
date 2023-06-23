@@ -18,6 +18,8 @@ import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
 import Login from './Screen/Login';
+import {NavigationContainer} from '@react-navigation/native';
+
 
 
 
@@ -31,20 +33,20 @@ function App(): JSX.Element {
   };
 
   return (
+  <NavigationContainer>
     <SafeAreaView style={backgroundStyle}>
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
+      <ScrollView>
         <View
-          style={{
+            style={{
             // backgroundColor: isDarkMode ? Colors.black : Colors.white,
             // backgroundColor: "red",
             height:"100%",
           }}>
           <Login/>
-        </View>
+        </View> 
       </ScrollView>
     </SafeAreaView>
+  </NavigationContainer>
   );
 }
 
