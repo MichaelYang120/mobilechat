@@ -17,8 +17,6 @@ export default function Login () {
 			console.log(email)
 			console.log(password)
 		}
-		
-		
 		// login conditional
 		if(email === "Test" && password ==="Test") {
 			console.warn("logged in successfully")
@@ -38,8 +36,9 @@ export default function Login () {
 
 	const SignupPress = () => {
 		if(debug) {
-			console.warn("clicked")
+			console.warn("clicked");
 		}
+		navigation.navigate("Signup");
 	}
 
 	const styles = StyleSheet.create({
