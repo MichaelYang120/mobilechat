@@ -25,7 +25,9 @@ export default function Login () {
 			setLoginState(true);
 			if(loginState === true) {
 				navigation.navigate("Home");
-				
+				// this is to clear fields after successful login
+				setEmail("");
+				setPassword("");
 			} else {
 				if(debug) {
 					Alert.alert("Incorrect Email or Password");
@@ -68,7 +70,7 @@ export default function Login () {
 			margin: 10,	
 			alignItems: 'center',
 		}
-	  });
+	});
 
 
 	return(
