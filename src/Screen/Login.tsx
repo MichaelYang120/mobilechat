@@ -20,12 +20,14 @@ export default function Login () {
 		// login conditional
 		if(email === "Test" && password ==="Test") {
 			console.warn("logged in successfully")
+			console.log(loginState)
 			setLoginState(true);
 			if(loginState === true) {
 				navigation.navigate("Home");
-				// this is to clear fields after successful login
-				setEmail("");
-				setPassword("");
+				// this is to cear fields after successful login
+				// setEmail("");
+				// setPassword("");
+				console.log("working")
 			} else {
 				if(debug) {
 					Alert.alert("Incorrect Email or Password");
@@ -76,7 +78,7 @@ export default function Login () {
 		<>
 			<ScrollView>
 				<View style={styles.container}>
-					<Text>Strong Old Test Login</Text>
+					<Text>Main Login Page</Text>
 					<TextInput
 						style={styles.textInputStyles}
 						placeholder='Email'

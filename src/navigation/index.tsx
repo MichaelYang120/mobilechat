@@ -7,21 +7,16 @@ import Home from '../Screen/Home';
 import PrivateMessages from '../Screen/PrivateMessages';
 import Signup from '../Screen/Signup';
 
-
-// import files here
-
-
 const Stack = createNativeStackNavigator();
-
 
 const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
           <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="PrivateMessages" component={PrivateMessages} />
-          <Stack.Screen name="Signup" component={Signup} />
       </Stack.Navigator>
     </NavigationContainer>
   )

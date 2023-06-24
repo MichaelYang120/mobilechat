@@ -1,45 +1,24 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useState } from 'react'
-import { Text, TextInput, Alert, View, ScrollView, StyleSheet, Pressable } from 'react-native'
+import React from 'react'
+import { Text, View, Pressable, StyleSheet, ScrollView } from 'react-native'
 
-
-
-export default function Signup () {
-	const [loginState, setLoginState] = useState(Boolean);
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+export default function Home () {
 	const navigation:any = useNavigation();
-	const debug = false;
-	
-	const LoginPress = () => {
-		if(debug) {
-			console.log("here")
-			console.log(email)
-			console.log(password)
-		}
-		
-		
-		// login conditional
-		if(email === "Test" && password ==="Test") {
-			console.warn("logged in successfully")
-			setLoginState(true);
-			if(loginState === true) {
-				navigation.navigate("Home");
-				// this is to clear fields after successful login
-				setEmail("");
-				setPassword("");
-			} else {
-				if(debug) {
-					Alert.alert("Incorrect Email or Password");
-				}
-			}
-		}
+
+	const signOutPress = () => {
+		navigation.navigate("Login");
 	}
 
-	const SignupPress = () => {
-		if(debug) {
-			console.warn("clicked")
-		}
+	const privateMessagesPress = () => {
+		navigation.navigate("PrivateMessages");
+	}
+
+	const groupPress = () => {
+		console.log("there")
+	}
+	
+	const chatPress = () => {
+
 	}
 
 	const styles = StyleSheet.create({
@@ -72,36 +51,38 @@ export default function Signup () {
 		}
 	});
 
-
 	return(
 		<>
 			<ScrollView>
-				<View style={styles.container}>
-					<Text>Strong Old Test Login</Text>
-					<TextInput
-						style={styles.textInputStyles}
-						placeholder='Email'
-						onChangeText={setEmail}
-						value={email}
-					/>
-					<TextInput
-						style={styles.textInputStyles}
-						placeholder='Password'
-						onChangeText={setPassword}
-						value={password}
-					/>
-
+				<View
+					style={styles.container}
+				>
+					<Text>
+						Home
+					</Text>
 					<Pressable
 						style={styles.button}
-						onPress={LoginPress}
+						onPress={privateMessagesPress}
 					>
-						<Text>Login</Text>
+						<Text>Private Messages</Text>
 					</Pressable>
 					<Pressable
 						style={styles.button}
-						onPress={SignupPress}
+						onPress={groupPress}
 					>
-						<Text>Sign Up</Text>
+						<Text>Group</Text>
+					</Pressable>
+					<Pressable
+						style={styles.button}
+					>
+						<Text>Chat</Text>
+					</Pressable>
+
+					<Pressable
+						style={styles.button}
+						onPress={signOutPress}
+					>
+						<Text>Sign Out</Text>
 					</Pressable>
 				</View>
 			</ScrollView>

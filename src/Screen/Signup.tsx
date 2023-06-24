@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react'
-import { Text, TextInput, View, Pressable, StyleSheet, ScrollView } from 'react-native'
+import { Text, TextInput, View, Pressable, StyleSheet, ScrollView, Alert } from 'react-native'
 
 export default function Signup () {
 	const navigation:any = useNavigation();
@@ -8,9 +8,31 @@ export default function Signup () {
 	const [name, setName] = useState("");
 	const [password, setPassword] = useState("");
 	const [username, setUsername] = useState("");
+	const [signupStatus, setSignupStatus] = useState(false);
 	
 	const loginPress = () => {
 		navigation.navigate("Login")
+	}
+
+	const signUpPress = () => {
+		if(email === "") {
+			Alert.alert("please enter email");
+		}
+		if(username === "") {
+			Alert.alert("please enter username");
+		}
+		if(password === "") {
+			Alert.alert("please enter a password");
+		}
+		if(name === "") {
+			Alert.alert("please enter a name");
+		}
+		if(name !== "" && password !== "" && email !== "" && username !== "") {
+			setSignupStatus(true)
+		}
+		if(signupStatus === true) {
+			navigation.navigate("Home");
+		}
 	}
 
 	const styles = StyleSheet.create({
@@ -77,6 +99,12 @@ export default function Signup () {
 						value={password}
 					/>
 
+					<Pressable
+						style={styles.button}
+						onPress={signUpPress}
+					>
+						<Text>Sign Up</Text>
+					</Pressable>
 					<Pressable
 						style={styles.button}
 						onPress={loginPress}
