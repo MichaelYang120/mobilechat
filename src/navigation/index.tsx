@@ -6,6 +6,7 @@ import Login from '../Screen/Login';
 import Home from '../Screen/Home';
 import PrivateMessages from '../Screen/PrivateMessages';
 import Signup from '../Screen/Signup';
+import Messages from '../Screen/Messages';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +18,7 @@ const Navigation = () => {
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="PrivateMessages" component={PrivateMessages} />
+          <Stack.Screen name="Messages" component={Messages} />
       </Stack.Navigator>
     </NavigationContainer>
   )

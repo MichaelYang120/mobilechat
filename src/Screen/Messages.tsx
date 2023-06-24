@@ -2,27 +2,11 @@ import { useNavigation } from '@react-navigation/native';
 import React from 'react'
 import { Text, View, Pressable, StyleSheet, ScrollView } from 'react-native'
 
-export default function Home () {
+export default function Messages () {
 	const navigation:any = useNavigation();
 
-	const signOutPress = () => {
-		navigation.navigate("Login");
-	}
-
-	const messagesPress = () => {
-		navigation.navigate("Messages")
-	}
-
-	const privateMessagesPress = () => {
-		navigation.navigate("PrivateMessages");
-	}
-
-	const groupPress = () => {
-		console.log("there")
-	}
-	
-	const chatPress = () => {
-
+	const homePress = () => {
+		navigation.navigate("Home");
 	}
 
 	const styles = StyleSheet.create({
@@ -62,37 +46,13 @@ export default function Home () {
 					style={styles.container}
 				>
 					<Text>
-						Home
+						Messages
 					</Text>
 					<Pressable
 						style={styles.button}
-						onPress={messagesPress}
+						onPress={homePress}
 					>
-						<Text>Messages</Text>
-					</Pressable>
-					<Pressable
-						style={styles.button}
-						onPress={privateMessagesPress}
-					>
-						<Text>Private Messages</Text>
-					</Pressable>
-					<Pressable
-						style={styles.button}
-						onPress={groupPress}
-					>
-						<Text>Group</Text>
-					</Pressable>
-					<Pressable
-						style={styles.button}
-					>
-						<Text>Chat</Text>
-					</Pressable>
-
-					<Pressable
-						style={styles.button}
-						onPress={signOutPress}
-					>
-						<Text>Sign Out</Text>
+						<Text>Home</Text>
 					</Pressable>
 				</View>
 			</ScrollView>
