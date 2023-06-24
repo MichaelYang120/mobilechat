@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react'
-import { Text, TextInput, Button, Alert, View, ScrollView } from 'react-native'
+import { Text, TextInput, Alert, View, ScrollView, StyleSheet, Pressable } from 'react-native'
 
 
 
@@ -9,11 +9,14 @@ export default function Login () {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const navigation:any = useNavigation();
+	const debug = false;
 	
 	const LoginPress = () => {
-		console.log("here")
-		console.log(email)
-		console.log(password)
+		if(debug) {
+			console.log("here")
+			console.log(email)
+			console.log(password)
+		}
 		
 		
 		// login conditional
@@ -24,39 +27,80 @@ export default function Login () {
 				navigation.navigate("Home");
 				
 			} else {
-				Alert.alert("Incorrect Email or Password");
+				if(debug) {
+					Alert.alert("Incorrect Email or Password");
+				}
 			}
 		}
 	}
 
 	const SignupPress = () => {
-		console.warn("clicked")
+		if(debug) {
+			console.warn("clicked")
+		}
 	}
+
+	const styles = StyleSheet.create({
+		textInputStyles: {
+			backgroundColor: '#F3F2F4',
+			flex: 1,
+			display: "flex",
+			padding: 4,
+			borderWidth: 1,
+			borderRadius: 3,
+			width: "80%",
+			margin: 10,
+		},
+		container: {
+			width: '100%',
+			padding: 15,
+			marginVertical: 5,
+			alignItems: 'center',
+		},
+		button: {
+			backgroundColor: 'pink',
+			flex: 1,
+			display: "flex",
+			padding: 10,
+			borderWidth: 1,
+			borderRadius: 3,
+			width: "80%",
+			margin: 10,	
+			alignItems: 'center',
+		}
+	  });
 
 
 	return(
 		<>
 			<ScrollView>
-				<View>
+				<View style={styles.container}>
+					<Text>Strong Old Test Login</Text>
 					<TextInput
+						style={styles.textInputStyles}
 						placeholder='Email'
 						onChangeText={setEmail}
 						value={email}
 					/>
 					<TextInput
+						style={styles.textInputStyles}
 						placeholder='Password'
 						onChangeText={setPassword}
 						value={password}
 					/>
-					<Button
-						title='Login'
-						onPress={LoginPress}
-					/>
-					<Button 
-						title='Sign Up'
-						onPress={SignupPress}
-					/>
 
+					<Pressable
+						style={styles.button}
+						onPress={LoginPress}
+					>
+						<Text>Login</Text>
+					</Pressable>
+					<Pressable
+						style={styles.button}
+						onPress={SignupPress}
+					>
+						<Text>Sign Up</Text>
+					</Pressable>
 				</View>
 			</ScrollView>
 		</>
