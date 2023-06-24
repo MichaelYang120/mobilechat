@@ -8,45 +8,24 @@
 import React from 'react';
 import {
   SafeAreaView,
-  ScrollView,
-  Text,
-  useColorScheme,
-  View,
+  StyleSheet
 } from 'react-native';
-
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
-import Login from './Screen/Login';
-import {NavigationContainer} from '@react-navigation/native';
-
-
+import Navigation from './src/navigation';
 
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    // backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-    // backgroundColor: "pink",
-    height:"100%",
-  };
+  
+  const styles = StyleSheet.create({
+    root: {
+      backgroundColor: '#F3F2F4',
+      flex: 1,
+    },
+  });
 
   return (
-  <NavigationContainer>
-    <SafeAreaView style={backgroundStyle}>
-      <ScrollView>
-        <View
-            style={{
-            // backgroundColor: isDarkMode ? Colors.black : Colors.white,
-            // backgroundColor: "red",
-            height:"100%",
-          }}>
-          <Login/>
-        </View> 
-      </ScrollView>
+    <SafeAreaView style={styles.root}>
+      <Navigation />
     </SafeAreaView>
-  </NavigationContainer>
   );
 }
 
