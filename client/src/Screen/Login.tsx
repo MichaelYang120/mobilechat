@@ -25,8 +25,8 @@ export default function Login () {
 			if(loginState === true) {
 				navigation.navigate("Home");
 				// this is to cear fields after successful login
-				// setEmail("");
-				// setPassword("");
+				setEmail("");
+				setPassword("");
 				console.log("working")
 			} else {
 				if(debug) {
